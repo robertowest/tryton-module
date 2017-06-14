@@ -7,4 +7,5 @@ Utilizaré como ejemplo los módulos desarrollados para un cliente.
 
 Empezaremos creando lo necesario para obtener la navegación del menú
 
+
 .. image:: img/01-menu.png

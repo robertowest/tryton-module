@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- icono -->
+        <record model="ir.ui.icon" id="sacerdote_icono">
+            <field name="name">arzo-sacerdote-icono</field>
+            <field name="path">icons/arzo-sacerdote-icono.svg</field>
+        </record>
+
+        <!-- definimos la vistas que usaremos para sacerdote -->
+        <record model="ir.ui.view" id="sacerdote_view_tree">
+            <field name="model">arzo.sacerdote</field>
+            <field name="type">tree</field>
+            <field name="name">sacerdote_list</field>
+        </record>
+        <!-- definimos el formulario que usaremos para sacerdote -->
+        <record model="ir.ui.view" id="sacerdote_view_form">
+            <field name="model">arzo.sacerdote</field>
+            <field name="type">form</field>
+            <field name="name">sacerdote_form</field>
+        </record>
+
+        <!-- vista para el menu principal y el evento -->
+        <record model="ir.action.act_window" id="act_arzo_sacerdote_form">
+            <field name="name">Sacerdotes</field>
+            <field name="res_model">arzo.sacerdote</field>
+        </record>
+
+        <!-- vista que conecta el formulario en el arbol -->
+        <record model="ir.action.act_window.view" id="act_sacerdote_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="sacerdote_view_tree"/>
+            <field name="act_window" ref="act_arzo_sacerdote_form"/>
+        </record>
+
+        <!-- vista para la edición del formulario de sacerdote -->
+        <record model="ir.action.act_window.view" id="act_sacerdote_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="sacerdote_view_form"/>
+            <field name="act_window" ref="act_arzo_sacerdote_form"/>
+        </record>
+
+        <!-- menú principal del módulo -->
+        <menuitem name="Curia" parent="arzobispado.menu_arzo"
+                  id="menu_curia" sequence="1" icon="tryton-open"/>
+
+        <!-- conectamos el item de menu al menu principal -->
+        <menuitem name="Sacerdotes" parent="menu_curia"
+                  id="menu_sacerdote" sequence="1" icon="arzo-sacerdote-icono" />
+                  <!-- action="act_arzo_sacerdote_form" -->
+
+
+        <!-- acciones -->
+        <!-- definir una acción en el menú de acciones
+        <record model="ir.action.wizard" id="mi_accion_colecta_wizard">
+            <field name="name">Mi accion</field>
+            <field name="wiz_name">arzo.sacerdote.mi_accion</field>
+            <field name="model">arzo.sacerdote</field>
+        </record>
+        <record model="ir.action.keyword" id="mi_accion_colecta_keyword">
+            <field name="keyword">form_action</field>
+            <field name="model">arzo.sacerdote,-1</field>
+            <field name="action" ref="mi_accion_colecta_wizard"/>
+        </record>
+        -->
+
+    </data>
+</tryton>

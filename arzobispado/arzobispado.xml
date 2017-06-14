@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- seguridad -->
+
+        <!-- grupo -->
+        <record model="res.group" id="grupo_arzo_admin">
+            <field name="name">Arzobispado</field>
+        </record>
+        <!-- usuario del grupo -->
+        <record model="res.user-res.group" id="usuario_admin_grupo_arzo_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="grupo_arzo_admin"/>
+        </record>
+        <!-- icono -->
+        <record model="ir.ui.icon" id="arzo_icono">
+            <field name="name">arzo-icono</field>
+            <field name="path">icons/arzo-icono.svg</field>
+        </record>
+
+        <!-- creamos la entrada principal del menu -->
+
+        <!-- Menu: raíz principal  -->
+        <menuitem name="Arzobispado" id="menu_arzo" sequence="1" icon="arzo-icono"/>
+
+    </data>
+</tryton>
