@@ -17,4 +17,7 @@ Creamos una carpeta llamada arzobispado que tendrá los siguientes archivos
 __init__.py
 -----------
 
-.. literalinclude:: arzobispado/__init__.py
+esto::
+  .. literalinclude:: arzobispado/__init__.py
+    :lines: 1-8
+    :linenos:   
