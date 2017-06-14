@@ -12,12 +12,3 @@ Creamos una carpeta llamada arzobispado que tendrá los siguientes archivos
     * __init__.py           (archivo de configuración de tryton)
     * arzobispado.xml       (definición del menú)
     * tryton.cfg            (archivo de configuración de tryton)
-
-
-__init__.py
------------
-
-esto::
-  .. literalinclude:: arzobispado/__init__.py
-    :lines: 1-8
-    :linenos:   
